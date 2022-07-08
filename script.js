@@ -1,4 +1,5 @@
 var generateBtn = document.querySelector("#generate");
+// Created array's for all of the variables that could go into the password
 const lowerCaseArray = [
   "a", "b", "c", "d", "e", "f", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
 ]
@@ -13,9 +14,11 @@ const symbolsArray = [
 ]
 let password = [
 ]
+// Created an array for the final password to go into 
 let passwordArray = [
 ]
 
+// I put all other variables inside of the character length variable because if it doesn't pass the initial character lenght, it shouldn't go onto the other variables. 
 function generatePassword() {
   var characterLength = prompt("How many characters would you like in your password?");
   console.log(characterLength);
@@ -35,7 +38,6 @@ function generatePassword() {
     if (lowerCase === true) {
       passwordArray = passwordArray.concat(lowerCaseArray)
     }
-
     if (numbers === true) {
       passwordArray = passwordArray.concat(numbersArray)
     }
@@ -47,6 +49,7 @@ function generatePassword() {
     }
 
   } else {
+    // Created an alert if the number chosen is not between 8 and 128
     alert("Must choose a number between 8 and 128")
   }
 
@@ -57,6 +60,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = passwordDisplay;
+  // added this to clear out the password if they choose to generate a different password
   password = []
 }
 
